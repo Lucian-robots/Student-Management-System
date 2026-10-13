@@ -7,14 +7,24 @@ public class Student {
     private int NumStudents = 0;
 
     // student constructor
-    public void Student(String tempName, int tempId) {
+    public Student(String tempName, int tempId) {
         this.name = tempName;
         this.id = tempId;
         NumStudents++;
     }
-
+  
     // getters
-    
+    public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+
+    // toString
+    public String toString() {
+        return "name is " + name + " and their id is: " + id + " ";
+    }
 }
 /*
 The student class will hold id, name, age, grade, and have a toString() thingy
