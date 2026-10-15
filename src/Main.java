@@ -6,36 +6,22 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[]args) {
-        //Student s1 = new Student();
-
-        //System.out.println("s1 is " + s1.toString());
-
-        //readFile();
         ArrayList<Student> studentList = readFile();
-
-        //System.out.println(studentList);
-        // System.out.println(studentList.get(0));
-        String name;
-        //String age;
+        String name; 
         int ageInt;
-
+        gradeLvl(5);
 
         // use getters from student class!
         // then we get the name and age from that!!
-
         int arrayNum = studentList.size();
         for (int i = 0; i < arrayNum; i++) {
             String name1 = studentList.get(i).getName();
             int age1 = studentList.get(i).getAge();
             //System.out.println(name1);
             int studentID = studentList.get(i).randId();
-            System.out.println(studentID);
-        }
-        
-
-        
+            
+        }   
     }
-    
     public static ArrayList<Student> readFile() {
         ArrayList<Student> studentList = new ArrayList<>();
 
@@ -52,8 +38,8 @@ public class Main {
                 
                 Student student = new Student(studentName, age); // hmmm
                 studentList.add(student);
-
-
+ 
+ 
                 // System.out.println("name: " + studentName + " and age is: " + age + " asd");
                 
             }
@@ -67,6 +53,23 @@ public class Main {
         
         
     }
+
+    // method for grade level bc i dont want to put it in the other for-loop
+    public static int gradeLvl(int age) {
+        int thing = 0;
+        for (int i = 1; i < 13; i++) {
+            if (age == i) {
+                thing = i;
+            } else {
+                System.out.println("Invalid age");
+            }
+            
+        }
+        return thing;
+        
+
+    }
+
 
 }
 
