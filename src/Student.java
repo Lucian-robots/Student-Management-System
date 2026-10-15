@@ -24,13 +24,22 @@ public class Student {
     public Student(String tempName, int tempAge) {
         this.name = tempName;
         this.age = tempAge;
-
+        NumStudents++;
     }
+    // default if nothing is added
     public Student() {
         name = "Hello";
+        NumStudents++;
     }
 
-  
+    // generate a random ID 
+    public int randId() {
+        int randId  = (int) (Math.random() *100000)+ 10;
+        return randId;
+
+    }
+
+    
     // getters
     public int getId() {
         return id;
@@ -38,36 +47,16 @@ public class Student {
     public String getName() {
         return name;
     }
+    public int getAge() {
+        return age;
+    }
 
     // toString
-    //  this is old one:  return "name is " + name + " and their id is: " + id + " ";
+    @Override
     public String toString() {
         return name + " " + age;
     }
-    /* 
-    public static void readFile() {
-        File students = new File("/Users/lucianhoffman/Documents/students.txt");
-        try (Scanner myReader = new Scanner(students)) {
-            while (myReader.hasNextLine()) {
-                String name = myReader.nextLine();
-               // System.out.println(name);
-                String s1 = name;
-                String studentName = s1.substring(0, s1.indexOf(","));
-                String studentAge = s1.substring((s1.indexOf(",") + 2));
-                int age = Integer.parseInt(studentAge);
-               // System.out.println("name: " + studentName + " and age is: " + age + " asd");
-                
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occured.");
-            e.printStackTrace();
-        }
-
-    }
-    */
-   
-// the code has the correct file location 
+    
 } 
 
 /*
