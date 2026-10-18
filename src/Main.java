@@ -10,7 +10,8 @@ public class Main {
         ArrayList<Student> studentList = readFile();
         ArrayList<Student> newStudent = newList(studentList);
         
-        
+        System.out.println("Imported the .txt file");
+        System.out.println(".txt Array list:\t " + studentList);
         //int gradeLvl = gradeLvl(ageInt);
         //System.out.println(gradeLvl);
         
@@ -18,8 +19,8 @@ public class Main {
         // then we get the name and age from that!!
         // int arrayNum = studentList.size();
         //System.out.println(studentList);
-        System.out.println(newStudent);
-        System.out.println(newStudent.get(2));
+        System.out.println("New list:\t" + newStudent);
+        //System.out.println(newStudent.get(2));
     }
    
     // readFile() to create an array list of students
