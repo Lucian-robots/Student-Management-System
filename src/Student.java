@@ -12,15 +12,17 @@ public class Student {
 
     // student constructor
     public Student(String tempName, int tempId, int tempAge, int tempGrade) {
-        this.name = tempName;
+        name = tempName;
         //this.id = tempId;
         this.age = tempAge;
         this.grade= tempGrade;
-        id = NumStudents + 1000;
+        this.id = tempId;
+        this.name = tempName;
         NumStudents++;
         
     }
     // student constructor for the file thingy
+
     public Student(String tempName, int tempAge) {
         this.name = tempName;
         this.age = tempAge;
@@ -52,9 +54,9 @@ public class Student {
     }
 
     // toString
-    @Override
+    
     public String toString() {
-        return name + " " + age;
+        return name +" grade: " + grade +" age: " + age +" id: " + id;
     }
     
 } 
@@ -63,6 +65,5 @@ public class Student {
 The student class will hold id, name, age, grade, and have a toString() thingy
 
 the name and age need to go into array or student
-student constructor is not working inside of student (duh)
 
 */

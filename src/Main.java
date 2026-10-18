@@ -6,22 +6,23 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[]args) {
+        // array list 
         ArrayList<Student> studentList = readFile();
-        String name; 
-        int ageInt;
-        gradeLvl(5);
-
+        ArrayList<Student> newStudent = newList(studentList);
+        
+        
+        //int gradeLvl = gradeLvl(ageInt);
+        //System.out.println(gradeLvl);
+        
         // use getters from student class!
         // then we get the name and age from that!!
-        int arrayNum = studentList.size();
-        for (int i = 0; i < arrayNum; i++) {
-            String name1 = studentList.get(i).getName();
-            int age1 = studentList.get(i).getAge();
-            //System.out.println(name1);
-            int studentID = studentList.get(i).randId();
-            
-        }   
+        // int arrayNum = studentList.size();
+        //System.out.println(studentList);
+        System.out.println(newStudent);
+        System.out.println(newStudent.get(2));
     }
+   
+    // readFile() to create an array list of students
     public static ArrayList<Student> readFile() {
         ArrayList<Student> studentList = new ArrayList<>();
 
@@ -40,7 +41,7 @@ public class Main {
                 studentList.add(student);
  
  
-                // System.out.println("name: " + studentName + " and age is: " + age + " asd");
+                //System.out.println("name: " + studentName + " and age is: " + age + " asd");
                 
             }
 
@@ -53,23 +54,40 @@ public class Main {
         
         
     }
+    public static ArrayList<Student> newList(ArrayList<Student> studentList) {
+        ArrayList<Student> newStudent = new ArrayList<>();
+        //ArrayList<Student> studentList = readFile();
 
-    // method for grade level bc i dont want to put it in the other for-loop
+        for (int i = 0; i < studentList.size(); i++) {
+            String name1 = studentList.get(i).getName();
+            int age1 = studentList.get(i).getAge();
+            
+            //System.out.println(name1);
+            int studentID = studentList.get(i).randId();
+            int grade = gradeLvl(age1);
+            
+            Student student1 = new Student(name1, studentID, age1, grade);
+            newStudent.add(student1); 
+        }  
+        return newStudent;
+    } 
+
+    // method for grade level bc i dont want to put it in the other for-loops
     public static int gradeLvl(int age) {
-        int thing = 0;
-        for (int i = 1; i < 13; i++) {
+        
+        int thing=0;
+        for (int i = 0; i < 18; i++) {
             if (age == i) {
-                thing = i;
+                thing = i-6;
             } else {
-                System.out.println("Invalid age");
+              
+                
             }
             
         }
+        //System.out.println(thing);
         return thing;
         
-
     }
 
-
 }
-
